@@ -1,5 +1,5 @@
-# Copyright (C) 2013-2016, The CyanogenMod Project
-# Copyright (C) 2017, The LineageOS Project
+# Copyright (C) 2013-2016, The CyanogenMod Project Copyright (C) 2017, The 
+# LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,11 +20,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from z2_plus device
 $(call inherit-product, device/zuk/z2_plus/device.mk)
 
-# Inherit some common Arrow stuff.
-$(call inherit-product, vendor/arrow/config/common.mk)
+# Inherit some common Bootleggers stuff.
+$(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := arrow_z2_plus
+PRODUCT_NAME := bootleg_z2_plus
 PRODUCT_DEVICE := z2_plus
 PRODUCT_BRAND := ZUK
 PRODUCT_MODEL := Z2 Plus
@@ -32,6 +32,11 @@ PRODUCT_MANUFACTURER := ZUK
 PRODUCT_GMS_CLIENTID_BASE := android-zuk
 TARGET_VENDOR_PRODUCT_NAME := z2_plus
 TARGET_VENDOR_DEVICE_NAME := z2_plus
+
+#maintainers prop .
+PRODUCT_BUILD_PROP_OVERRIDES += \
+DEVICE_MAINTAINERS="Aswin A S"
+BOOTLEGGERS_BUILD_TYPE="Shishufied"
 
 # Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
